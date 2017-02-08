@@ -26,12 +26,13 @@ var myCharacters = [{
 		];
 	
 var myChamp = "";
-var myEnemies = {};
+var myEnemy = "";
 var defender = {};
 var char = "";
 var cAttack = 0;
 var hitPoints = 6;
-
+var myhealth = 0;
+var enemyHealth = 0;
 
 
 function initialize () {
@@ -64,9 +65,22 @@ function initialize () {
 		];	
 }
 
-function attackEnemy () {
+function attackEnemy() {
 	hitPoints += 6;
+}
 
+function getHit() {
+	enemyHealth -= hitPoints;
+}
+
+function getcounterHit() {
+	myHealth -= cAttack;
+}
+function pickEnemy() {
+	$(".myenemy").on("click", function () {
+		myEnemy = this.myCharacters;
+		console.log(this.myCharacters);
+	});
 }
 //var lookup = {};
 //for (var i = 0, len = myCharacters.length; i < len; i++) {
