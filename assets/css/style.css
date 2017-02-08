@@ -41,6 +41,7 @@ h1 {
 	box-sizing: border-box;
 	height: 100px;
 	width: 100px;
+	overflow-wrap: auto;
 	outline-style: none;
 	padding: 5px;
 	font-size: 13px;

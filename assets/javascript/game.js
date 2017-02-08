@@ -79,7 +79,7 @@ function getcounterHit() {
 function pickEnemy() {
 	$(".myenemy").on("click", function () {
 		myEnemy = this.myCharacters;
-		console.log(this.myCharacters);
+		console.log(this.myCharacters); // for testing
 	});
 }
 //var lookup = {};
@@ -88,20 +88,32 @@ function pickEnemy() {
 //}
 
 $(document).ready(function() {
-	$(".characters").append(('<button id="Luke" class="btn btn-lg cbutton" value="Luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health:') + myCharacters[0].health + ('</button>'));
-	$("#Luke").val = 1;
-	//console.log(myCharacters.health[0]);
-	$(".characters").append(('<button id="Obi-Wan" class="btn btn-lg cbutton" value="Obi-Wan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health:') + myCharacters[1].health + ('</button>'));
-	//$("#Obi-Wan").val("Obi-Wan");​​​​​​
-	//console.log(myCharacters.health[1]);
-	$(".characters").append(('<button id="Darth-Vader" class="btn btn-lg cbutton" value="Darth-Vader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health:') + myCharacters[2].health + ('</button>'));
-	$(".characters").append(('<button id="Darth Maul" class="btn btn-lg cbutton" value="Darth-Maul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health:') + myCharacters[3].health + ('</button>'));
-	//$("#Luke").val(Characters.name[0]);​​​​​
-	$(".characters").on("click", function () {
-		myChamp = this.characters;
-		console.log(myChamp);
-		//console.log(lookup[name]);
-	});
+	/*for (i=0; i < myCharacters.length; i++) {
+        var charBtn = $('<button>');
+        charBtn.addClass("btn btn-lg cbutton");
+        charBtn.attr("data-letter", myCharacters[i].name);//creating <button data-letter="a" class="letter-button letter letterbuttoncolor"> </button>
+        charBtn.text(myCharacters[i].name + "Health: " + myCharacters[i].health);
+        charBtn.append('<br><img scr=" + myCharacters[i].image + "><br>');//.text();
+        //charBtn.append('<img scr=" + myCharacters[i].image + ">');
+        $(".characters").append(charBtn);
+        
+		}*/
+		
+		$(".characters").append(('<button id="Luke" class="btn btn-lg cbutton" value="Luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health:') + myCharacters[0].health + ('</button>'));
+		$("#Luke").val = 1;
+		//console.log(myCharacters.health[0]);
+		$(".characters").append(('<button id="Obi-Wan" class="btn btn-lg cbutton" value="Obi-Wan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health:') + myCharacters[1].health + ('</button>'));
+		//$("#Obi-Wan").val("Obi-Wan");​​​​​​
+		//console.log(myCharacters.health[1]);
+		$(".characters").append(('<button id="Darth-Vader" class="btn btn-lg cbutton" value="Darth-Vader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health:') + myCharacters[2].health + ('</button>'));
+		$(".characters").append(('<button id="Darth Maul" class="btn btn-lg cbutton" value="Darth-Maul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health:') + myCharacters[3].health + ('</button>'));
+			//$("#Luke").val(Characters.name[0]);​​​​​
+		$(".cbutton").on("click", function () {
+			myChamp = this.value;
+			console.log(myChamp); //for testing
+			$(".characters").empty();
+			//console.log(lookup[name]);
+		});
 
 /*
 $(document).ready(function() {
