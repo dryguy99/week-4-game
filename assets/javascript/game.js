@@ -111,19 +111,25 @@ $(document).ready(function() {
 		}*/
 		initialize();
 		displayBtn();
+		$(".characters").append("<br><h2>Click on your champion! But choose wisely...</h2>")
 		$(".cbutton").on("click", function () {
 			z = parseInt(this.value);
 			myChamp = btnArray[z];
 			console.log(typeof(myChamp) + " " + typeof(DarthMaulBtn));
 			console.log(myChamp + " z=" + z); //for testing
-			$(".mychar").append(myChamp);
 			$(".characters").empty();
+			$(".mychar").append(myChamp)
+			$(".cbutton").addClass("champ")
+			$(".champ").removeClass("cbutton");
 		
 		
 			btnArray.splice(z,1);
 			for (i=0; i < btnArray.length; i++) {
 				//console.log(item);
 				$(".myenemies").append(btnArray[i]);}
+			$('.cbutton').addClass("enemy");
+			$('.enemy').removeClass(".cbutton");
+			
 			$(".myenemies").on("click", function(item) {
 			var y = parseInt(item.value);
 			defender = btnArray[y];
