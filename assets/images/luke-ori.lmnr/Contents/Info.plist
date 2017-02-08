@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>com.luminar.lmnr</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>documentbundle</string>
+	<key>CFBundlePackageType</key>
+	<string>LMNR</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>2946</string>
+	<key>MPHistoryDict</key>
+	<dict>
+		<key>cachedTexturesDict</key>
+		<dict>
+			<key>/Users/dryguy/git-work/week-4-game/assets/images/luke.jpeg</key>
+			<string>EF21D527-F0E7-4A32-9AAF-0B1C01043F8C.jpeg</string>
+		</dict>
+		<key>currentLevelOfHistory</key>
+		<integer>0</integer>
+		<key>historyDicts</key>
+		<array>
+			<dict>
+				<key>actionName</key>
+				<string>Transform Tool: Apply</string>
+				<key>uuid</key>
+				<string>B1A59B7C-DB7D-4E36-81F6-E14E4C1C1705</string>
+			</dict>
+		</array>
+	</dict>
+	<key>MPOriginalImagePath</key>
+	<string>/Users/dryguy/git-work/week-4-game/assets/images/luke.jpeg</string>
+	<key>MPSaveHistoryToDocument</key>
+	<true/>
+</dict>
+</plist>
