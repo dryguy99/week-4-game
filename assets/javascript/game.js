@@ -29,14 +29,44 @@ var myChamp = "";
 var myEnemies = {};
 var defender = {};
 var char = "";
+var cAttack = 0;
 var hitPoints = 6;
 
 
 
 function initialize () {
-	
-	
-	
+	hitPoints = 6;
+	cAttack = 0;
+	myCharacters = [{
+		name: "Luke",   
+		health: 100,
+		attack: 6, 
+		counterAttack: 5,
+		image: "/assets/images/luke1.png"},
+			{
+		name: "Obi-Wan",
+		health: 120,
+		attack: 6,
+		counterAttack: 7,
+		image: "/assets/images/obi-wan1.png"},
+			{
+		name: "Darth-Vader",
+		health: 150,
+		attack: 6,
+		counterAttack: 25,
+		image: "/assets/images/darth-vader1.png"},
+			{
+		name: "Darth-Maul",
+		health: 100,
+		attack: 6,
+		counterAttack: 20,
+		image: "/assets/images/darth-maul1.png"}
+		];	
+}
+
+function attackEnemy () {
+	hitPoints += 6;
+
 }
 //var lookup = {};
 //for (var i = 0, len = myCharacters.length; i < len; i++) {
@@ -55,9 +85,7 @@ $(document).ready(function() {
 	//$("#Luke").val(Characters.name[0]);​​​​​
 	$(".characters").on("click", function () {
 		myChamp = this.characters;
-		var value = $(this).val();
-		console.log($(this).val());
-		console.log(myChamp + " " + value);
+		console.log(myChamp);
 		//console.log(lookup[name]);
 	});
 
