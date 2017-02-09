@@ -138,6 +138,10 @@ var eHealthDM = 100;
 var htmlclass = "";
 var APD = 0;
 var y = 0;
+var defender;
+var z = 0;
+var tO ="";
+var tOff = "";
 
 
 function initialize () {
@@ -151,6 +155,7 @@ function initialize () {
 	eHealthO = 120;
 	eHealthDV = 150;
 	eHealthDM = 100;
+	y = 0;
 }
 
 function attackEnemy() {
@@ -162,7 +167,9 @@ function attackEnemy() {
 			}
 		else if (myEnemy = 'luke') {
 				eHealthL = eHealthL - attack;
-				$('.myenemy').html(('<button id="luke3" class="btn btn-lg defender" value="luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health: <span id="you">') + eHealthL + ('</span></button>'));		
+				$("#you").html(eHealthL);
+				//$('.myenemy').html(('<button id="luke3" class="btn btn-lg defender" value="luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health: <span id="you">') + eHealthL + ('</span></button>'));		
+				console.log("My Enemy is " + myEnemy + "updated Luke Health");
 				luke.toggleOn3();
 				attack += 6;}
 
@@ -174,7 +181,9 @@ function attackEnemy() {
 			}
 		else if (myEnemy = 'obiwan'){
 				eHealthO = eHealthO - attack;
-				$('.myenemy').html(('<button id="obiwan3" class="btn btn-lg defender" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="you">') + eHealthO + ('</span></button>'));
+				$("you").html(eHealthO);
+				//$('.myenemy').html(('<button id="obiwan3" class="btn btn-lg defender" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="you">') + eHealthO + ('</span></button>'));
+				console.log("My Enemy is " + myEnemy + "updated Obi Wan Health");
 				obiwan.toggleOn3();
 				attack += 6;}
 	if 	((myEnemy = 'darthvader') && (eHealthDV <= 0)) {
@@ -184,7 +193,9 @@ function attackEnemy() {
 			}
 		else if (myEnemy = 'darthvader') {
 				eHealthDV = eHealthDV - attack;
-				$('.myenemy').html(('<button id="darthvader3" class="btn btn-lg defender" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="you">') + eHealthDV + ('</span></button>'));
+				$("#you").html(eHealthDV);
+				//$('.myenemy').html(('<button id="darthvader3" class="btn btn-lg defender" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="you">') + eHealthDV + ('</span></button>'));
+				console.log("my enemy is " + myEnemy + "updated Darth Vader Health");
 				darthvader.toggleOn3();
 				attack += 6;
 			}
@@ -195,7 +206,9 @@ function attackEnemy() {
 			}
 		else if (myEnemy = 'darthmaul') {
 				eHealthDM = eHealthDM - attack;
-				$('.myenemy').html(('<button id="darthmaul3" class="btn btn-lg defender" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="you">') + eHealthDM + ('</span></button>'));			
+				$("#you").html(eHealthDM);
+				//$('.myenemy').html(('<button id="darthmaul3" class="btn btn-lg defender" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="you">') + eHealthDM + ('</span></button>'));			
+				console.log("my enemy is " + myEnemy + "updated Darth Maul Health");
 				darthmaul.toggleOn3();
 				attack += 6;}
 
@@ -214,10 +227,7 @@ function getcounterHit() {
 
 /* Character Buttons */
 
-var defender;
-var z = 0;
-var tO ="";
-var tOff = "";
+
 
 
 function setChamp() {
@@ -360,12 +370,13 @@ $(document).ready(function() {
 	$(document).keypress( function() {
 		initialize();
 		setChamp();
-		while (y < 1) {
-			setEnemies();
-			y++;}
 		do {
+			setEnemies();
+			y++;
+		} while (y < 1);
+		if (APD < 3) {
 			fight();
-		} while (APD < 3);
+		}
 		
 			
 		
