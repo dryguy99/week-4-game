@@ -13,6 +13,33 @@ h1 {
 h2 {
 	color: #7FFF00;
 }
+h3#start {
+	clear: both;
+	display: inline;
+}
+h3#directions {
+	clear: both;
+	display: none;
+}
+div#left {
+	position: absolute;
+	top: 0px;
+	left: 60px;
+	font-weight: 700;
+	white-space: nowrap;
+	display: none;
+	
+
+}
+div#right {
+	position: absolute;
+	top: 0px;
+	left: 85px;
+	font-weight: 700;
+	white-space: nowrap;
+	display:none;
+	
+}
 .mybtn {
 	
 }
@@ -22,7 +49,7 @@ h2 {
 	border-radius: 25px;
 	font-size: 24px;
 	color: black;
-	background-image: url(../images/x-wing1.jpeg);
+	background-image: url(../images/x-wing2.jpeg);
 	background-repeat: no-repeat;
 	margin: 10px;
 	padding: 50px;
@@ -68,6 +95,54 @@ h2 {
 	background-color: red;
 	border-radius: 15px;
 }
+.characters > #Luke {
+	display: inline;
+}
+.characters > #ObiWan {
+	display: inline;
+}
+.characters > #DarthVader {
+	display: inline;
+}
+.characters > #DarthMaul {
+	display: inline;
+}
+.myenemies > #luke1 {
+	display: none;
+}
+.myenemies > #obiwan1 {
+	display: none;
+}
+.myenemies > #darthvader1 {
+	display: none;
+}
+.myenemies > #darthmaul1 {
+	display: none;
+}
+.mychar > #luke2 {
+	display: none;
+}
+.mychar > #obiwan2 {
+	display: none;
+}
+.mychar > #darthvader2 {
+	display: none;
+}
+.mychar > #darthmaul2 {
+	display: none;
+}
+.myenemy > #luke3 {
+	display: none;
+}
+.myenemy > #obiwan3 {
+	display: none;
+}
+.myenemy > #darthvader3 {
+	display: none;
+}
+.myenemy > #darthmaul3 {
+	display: none;
+}
 .champ {
 	box-sizing: border-box;
 	height: 100px;
@@ -78,6 +153,18 @@ h2 {
 	font-size: 13px;
 	margin-right: 20px;
 	background-color: green;
+	border-radius: 15px;
+}
+.defender {
+	box-sizing: border-box;
+	height: 100px;
+	width: 100px;
+	overflow-wrap: auto;
+	outline-style: none;
+	padding: 5px;
+	font-size: 13px;
+	margin-right: 20px;
+	background-color: red;
 	border-radius: 15px;
 }
 img#luke {
