@@ -1,29 +1,36 @@
 body {
 	box-sizing: border-box;
-	background: #80e5ff;
+	background:  #4c93bd;
 	max-width: 700px;
 	height: 700px;
-	margin: 5px auto;
-	font-family: 'Erica One', cursive;
+	margin: 2px auto;
+	font-family: 'Kanit', sans-serif;
 	font-weight: 600;
 	font-color: #002699;
 }
 h1 {
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 5px 0px;
 	padding: 0px;
 	line-height: 1;
+	font-size: 60px;
 	text-align: center;
+	color: #ccf5ff;
 }
 h2 {
 	color: #7FFF00;
 }
+h3 {
+	color:  #ff4d4d;
+}
 h3#start {
 	clear: both;
 	display: inline;
+	color: #002699;
 }
 h3#directions {
 	clear: both;
 	display: none;
+	font-color: #002699;
 }
 div#left {
 	position: absolute;
@@ -32,6 +39,7 @@ div#left {
 	font-weight: 700;
 	white-space: nowrap;
 	display: none;
+	font-color: #002699;
 	
 
 }
@@ -42,6 +50,7 @@ div#right {
 	font-weight: 700;
 	white-space: nowrap;
 	display:none;
+	font-color: #002699;
 	
 }
 .mybtn {
@@ -50,6 +59,11 @@ div#right {
 #nextpick {
 	color: red;
 	display: none;
+	animation-name: attention;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 0.5s;
+
 
 }
 .mybackground {
@@ -163,6 +177,10 @@ div#right {
 	margin-right: 20px;
 	background-color: green;
 	border-radius: 15px;
+	animation-name: champion;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
 }
 .defender {
 	box-sizing: border-box;
@@ -175,8 +193,24 @@ div#right {
 	margin-right: 20px;
 	background-color: red;
 	border-radius: 15px;
+	animation-name: challenger;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-duration: 1s;
 }
 img#luke {
 	height: 60px;
 	width: 60px;
+}
+@keyframes champion {
+	from {background-color: green;}
+	to {background-color: #b3d9ff;}
+}
+@keyframes challenger {
+	from {background-color: #ff0000;}
+	to { background-color: #ff9f80;}
+}
+@keyframes attention {
+	from {color: #ff0000;}
+	to{color: #000099;}
 }
