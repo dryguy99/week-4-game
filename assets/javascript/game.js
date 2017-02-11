@@ -382,6 +382,7 @@ function fight() {
 			y++;}
 	});
 }
+
 $(document).ready(function() {
 	$('.characters').append(('<button id="luke" class="btn btn-lg cbutton" value="luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health: ') + luke.health + ('</button>'));		
 	$('.characters').append(('<button id="obiwan" class="btn btn-lg cbutton" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health:') + obiwan.health + ('</button>'));
@@ -399,91 +400,30 @@ $(document).ready(function() {
 	$('.myenemy').append(('<button id="obiwan3" class="btn btn-lg defender" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="you">') + eHealthO + ('</span></button>'));
 	$('.myenemy').append(('<button id="darthvader3" class="btn btn-lg defender" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="you">') + eHealthDV + ('</span></button>'));
 	$('.myenemy').append(('<button id="darthmaul3" class="btn btn-lg defender" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="you">') + eHealthDM + ('</span></button>'));			
+	
+	
 
-	/*for (i=0; i < myCharacters.length; i++) {
-        var charBtn = $('<button>');
-        charBtn.addClass("btn btn-lg cbutton");
-        charBtn.attr("data-letter", myCharacters[i].name);//creating <button data-letter="a" class="letter-button letter letterbuttoncolor"> </button>
-        charBtn.text(myCharacters[i].name + "Health: " + myCharacters[i].health);
-        charBtn.append('<br><img scr=" + myCharacters[i].image + "><br>');//.text();
-        //charBtn.append('<img scr=" + myCharacters[i].image + ">');
-        $(".characters").append(charBtn);
-        
-		}*/
-	$(document).keypress( function() {
-		initialize();
-		setChamp();
-		do {
-			setEnemies();
-			y++;
-		} while (y < 1);
-		if (APD < 3) {
-			fight();
-		}
-		else {
-			alert("Game Over!");
+	function runGame () {
+		$(document).keypress( function() {
 			initialize();
 			setChamp();
-		}
-		
-			
-		
-		
-
-	});
-
-	
-	//luke.toggleOnLuke(".mychar > #luke") toggle on luke
-
-/*		$(".characters").append("<br><h2>Click on your champion! But choose wisely...</h2>")
-		$(".cbutton").on("click", function () {
-			z = parseInt(this.value);
-			myChamp = btnArray[z];
-
-			console.log(typeof(myChamp) + " " + typeof(DarthMaulBtn));
-			console.log(myChamp + " z=" + z); //for testing
-			$(".characters").empty();
-			$(".mychar").append(myChamp)
-			$(".cbutton").addClass("champ")
-			$(".champ").removeClass("cbutton");
-		
-		
-			btnArray.splice(z,1);
-			for (i=0; i < btnArray.length; i++) {
-				//console.log(item);
-				var enemybutton = $(btnArray[i]);
-				$(".myenemies").append(btnArray[i]).attr('value=" + i +"');
-
+			do {
+				setEnemies();
+				y++;
+			} while (y < 1);
+			if (APD < 3) {
+				fight();
 			}
-				enemybutton.on("click", function() {
-					console.log($(this).attr("value"));
-
-				});
-				
-			
-
-			$('.cbutton').addClass("enemy");
-			$('.enemy').removeClass(".cbutton");
+			else {
+				alert("Game Over!");
+				initialize();
+				setChamp();
+			}
+	
 		});
-			/*$(".myenemies").on("click", function() {
-			var item = $(this);
-			var y = parseInt(item.attr("value"));
-			defender = btnArray[y];
-			console.log(defender + " y= " + y);
-			$(".myenemy").append(defender);
-				//$("#")
-			
-			//console.log(lookup[name]);
-		});*/
-});
-/*$(document).ready(function() {
-	initialize ();
-	$(".characters").on("click", mychar (item) {
-		alert(item);
-	}); */
-
-   
-
-
+	}
+	runGame();
+		
+})
 
   
