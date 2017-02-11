@@ -1,8 +1,12 @@
 body {
 	box-sizing: border-box;
+	background: #80e5ff;
 	max-width: 700px;
 	height: 700px;
 	margin: 5px auto;
+	font-family: 'Erica One', cursive;
+	font-weight: 600;
+	font-color: #002699;
 }
 h1 {
 	margin: 0px 0px 10px 0px;
@@ -42,6 +46,11 @@ div#right {
 }
 .mybtn {
 	
+}
+#nextpick {
+	color: red;
+	display: none;
+
 }
 .mybackground {
 	width: 100%;
