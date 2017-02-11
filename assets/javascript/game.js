@@ -161,39 +161,40 @@ function initialize () {
 }
 
 function attackEnemy() {
-	console.log(Adefender);
-	if ((Adefender = 'luke') && (eHealthL<= 0)) {
+	console.log("enemy: " + Adefender + " Champ is: " + myChamp);
+	if ((Adefender === 'luke') && (eHealthL<= 0)) {
 				alert("You Killed LUKE!");
 				APD++;
 				luke.toggleOff3();
 			}
-		else if (Adefender = 'luke') {
+		else if (Adefender === 'luke') {
 				eHealthL = eHealthL - attack;
 				$("#you").html(eHealthL);
 				//$('.myenemy').html(('<button id="luke3" class="btn btn-lg defender" value="luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health: <span id="you">') + eHealthL + ('</span></button>'));		
 				console.log("My Enemy is " + Adefender + " updated Luke Health");
 				luke.toggleOn3();
-				attack += 6;}
+				attack += 6;
+				}
 
 			
-	if 	((Adefender = 'obiwan') && (eHealthO <= 0)) {
+		else if ((Adefender === 'obiwan') && (eHealthO <= 0)) {
 				alert("You Killed OBI-WAN!");
 				APD++;
 				obiwan.toggleOff3();
 			}
-		else if (Adefender = 'obiwan'){
+		else if (Adefender === 'obiwan'){
 				eHealthO = eHealthO - attack;
 				$("you").html(eHealthO);
 				//$('.myenemy').html(('<button id="obiwan3" class="btn btn-lg defender" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="you">') + eHealthO + ('</span></button>'));
 				console.log("My Enemy is " + Adefender + " updated Obi Wan Health");
 				obiwan.toggleOn3();
 				attack += 6;}
-	if 	((Adefender = 'darthvader') && (eHealthDV <= 0)) {
+		else if ((Adefender === 'darthvader') && (eHealthDV <= 0)) {
 				alert("You Killed Darth Vader!");
 				APD++;
 				darthvader.toggleOff3();
 			}
-		else if (Adefender = 'darthvader') {
+		else if (Adefender === 'darthvader') {
 				eHealthDV = eHealthDV - attack;
 				$("#you").html(eHealthDV);
 				//$('.myenemy').html(('<button id="darthvader3" class="btn btn-lg defender" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="you">') + eHealthDV + ('</span></button>'));
@@ -201,12 +202,12 @@ function attackEnemy() {
 				darthvader.toggleOn3();
 				attack += 6;
 			}
-	if 	((Adefender = 'darthmaul') && (eHealthDM <= 0)) {
+		else if	((Adefender === 'darthmaul') && (eHealthDM <= 0)) {
 				alert("You Killed Darth Maul!");
 				APD++;
 				darthmaul.toggleOff3();
 			}
-		else if (Adefender = 'darthmaul') {
+		else if (Adefender === 'darthmaul') {
 				eHealthDM = eHealthDM - attack;
 				$("#you").html(eHealthDM);
 				//$('.myenemy').html(('<button id="darthmaul3" class="btn btn-lg defender" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="you">') + eHealthDM + ('</span></button>'));			
@@ -235,101 +236,106 @@ function getcounterHit() {
 function setChamp() {
 	$(".cbutton").on("click", function() {
 			myChamp = $(this).val();
-			z = allCharArray.indexOf(myChamp);
-			//tO = ('".mychar > #'+ myChamp +'"');
-			console.log(myChamp + "  " + tO);
-			switch (myChamp) {
-				case 'luke':
+			console.log(myChamp);
+			if (myChamp === 'luke') {
+					console.log("display: " + myChamp);
+					myHealth = luke.health;
 					luke.toggleOff();
 					obiwan.toggleOff();
 					darthvader.toggleOff();
 					darthmaul.toggleOff();
+					$('.mychar').html(('<button id="luke2" class="btn btn-lg champ" value="luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health: <span id="me">') + myhealth + ('</span></button>'));		
 					luke.toggleOn2();
 					obiwan.toggleOn1();
 					darthvader.toggleOn1();
 					darthmaul.toggleOn1();
 					$("div#left").css("display", "inline");
-					return;
-				case 'obiwan':
+					$("h3#directions").css("display", "none");
+				}
+			else if (myChamp === 'obiwan') {
+					console.log("display: " + myChamp);
 					myhealth = obiwan.health;
-					$('.mychar').html(('<button id="obiwan2" class="btn btn-lg champ" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="me">') + myhealth + ('</span></button>'));
 					luke.toggleOff();
 					obiwan.toggleOff();
 					darthvader.toggleOff();
 					darthmaul.toggleOff();
+					$('.mychar').html(('<button id="obiwan2" class="btn btn-lg champ" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="me">') + myhealth + ('</span></button>'));
 					obiwan.toggleOn2();
 					luke.toggleOn1();
 					darthvader.toggleOn1();
 					darthmaul.toggleOn1();
 					$("div#left").css("display", "inline");
-					return;
-				case 'darthvader':
+					$("h3#directions").css("display", "none");
+				}
+			else if (myChamp === 'darthvader') {
+					console.log("display: " + myChamp);
 					myhealth = darthvader.health;
-					$('.mychar').html(('<button id="darthvader2" class="btn btn-lg champ" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="me">') + myhealth +('</span></button>'));
 					console.log(myhealth);
 					luke.toggleOff();
 					obiwan.toggleOff();
 					darthvader.toggleOff();
 					darthmaul.toggleOff();
+					$('.mychar').html(('<button id="darthvader2" class="btn btn-lg champ" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="me">') + myhealth +('</span></button>'));
 					darthvader.toggleOn2();
 					luke.toggleOn1();
 					obiwan.toggleOn1();
 					darthmaul.toggleOn1();
 					$("div#left").css("display", "inline");
-					return;
-				case 'darthmaul':
+					$("h3#directions").css("display", "none");
+				}
+			else if	(myChamp === 'darthmaul') {
+					console.log("display: " + myChamp);
 					myhealth = darthmaul.health;
-					$('.mychar').html(('<button id="darthmaul2" class="btn btn-lg champ" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="me">') + myhealth + ('</span></button>'));			
 					console.log(myhealth)
 					luke.toggleOff();
 					obiwan.toggleOff();
 					darthvader.toggleOff();
 					darthmaul.toggleOff();
+					$('.mychar').html(('<button id="darthmaul2" class="btn btn-lg champ" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="me">') + myhealth + ('</span></button>'));			
 					darthmaul.toggleOn2();
 					luke.toggleOn1();
 					obiwan.toggleOn1();
 					darthvader.toggleOn1();
 					$("div#left").css("display", "inline");
-					return;
-			}
+					$("h3#directions").css("display", "none");
+				}
 	});
 }
 
 function setEnemies (){
 	$(".enemy").on("click", function() {
 			Adefender = $(this).val();
-			switch (Adefender) {
-				case 'luke':
+			console.log(Adefender);
+			if (Adefender === 'Luke') {
 					luke.toggleOff1();
 					eHealthL = luke.health;
 					$('.myenemy').html(('<button id="luke3" class="btn btn-lg defender" value="luke">Luke Skywalker<br><img src="assets/images/luke1.png"><br>Health: <span id="you">') + eHealthL + ('</span></button>'));		
 					luke.toggleOn3();
 					$("div#right").css("display", "inline");
-					return;
-				case 'obiwan':
+					}
+			else if (Adefender === 'obiwan') {
 					eHealthO = obiwan.health;
-					$('.myenemy').html(('<button id="obiwan3" class="btn btn-lg defender" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="you">') + eHealthO + ('</span></button>'));
 					obiwan.toggleOff1();
+					$('.myenemy').html(('<button id="obiwan3" class="btn btn-lg defender" value="obiwan">Obi-Wan<br><img src="assets/images/obi-wan1.png"><br>Health: <span id="you">') + eHealthO + ('</span></button>'));
 					obiwan.toggleOn3();
 					$("div#right").css("display", "inline");
-					return;
-				case 'darthvader':
+					}
+			else if (Adefender === 'darthvader') {
 					eHealthDV = darthvader.health;
+					darthvader.toggleOff1();
 					$('.myenemy').html(('<button id="darthvader3" class="btn btn-lg defender" value="darthvader">Darth Vader<br><img src="assets/images/darth-vader1.png"><br>Health: <span id="you">') + eHealthDV + ('</span></button>'));
 					//console.log(myhealth);
-					darthvader.toggleOff1();
 					darthvader.toggleOn3();
 					$("div#right").css("display", "inline");
-					return;
-				case 'darthmaul':
+					}
+			else if (Adefender === 'darthmaul') {
 					eHealthDM = darthmaul.health;
+					darthmaul.toggleOff1();
 					$('.myenemy').html(('<button id="darthmaul3" class="btn btn-lg defender" value="darthmaul">Darth Maul<br><img src="assets/images/darth-maul1.png"><br>Health: <span id="you">') + eHealthDM + ('</span></button>'));			
 					//console.log(myhealth)
-					darthmaul.toggleOff1();
 					darthmaul.toggleOn3();
 					$("div#right").css("display", "inline");
-					return;
-			}
+					}
 	});	
 }
 
